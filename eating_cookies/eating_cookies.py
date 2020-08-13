@@ -14,6 +14,7 @@ def eating_cookies(n):
     # go through all ways for eating cookies
     # how can ways can we eat 5 cookies 
     else:
+        # TODO: I NEED AN EXPLANATION OF THIS
         return eating_cookies(n - 3) + eating_cookies(n - 2) + eating_cookies(n - 1)
     return n
 
