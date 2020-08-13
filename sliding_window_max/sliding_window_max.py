@@ -17,10 +17,8 @@ def sliding_window_max(nums, k):
         max_value = max(window)
         # push max value into new array
         new_array.append(max_value)
-
         if (k > len(nums)):
-            break
-        
+            break  
         window = nums[start +1:k + 1]
     return new_array
         # increment sliding window
