@@ -2,15 +2,43 @@
 Input: a List of integers
 Returns: a List of integers
 '''
-def product_of_all_other_numbers(arr):
-    # Your code here
+import math
 
-    pass
+# TODO: I NEED HELP WITH THIS
+
+# def product_of_all_other_numbers(arr):
+#     new_arr = []
+    
+#     # loop from start of list
+#     for i in range(0, len(arr)):
+#         print(f'from start of lis {arr[i]}')
+#         i += 1
+#     for j in range(len(arr) -1):  
+#         print(arr[j])
+#         j -= 1
+#         # if arr i is the same as arr j, continue
+#         # the index you are on times the values of every other index except the current index
+#         # arr[0] = 1: 7*3*4 goes back into arr[0] for 84
+
+def product_of_all_other_numbers(arr):
+    # prints [0,0,0,0] to have a temp new array
+    final_arr = [0] * len(arr)
+    # print(final_arr)
+    for i, elem in enumerate(arr):
+        j = i + 1
+        # print(f'counter j is {j} and i is {i}') 
+        new_arr = arr[:i] + arr[j:] if i != 0 else arr[j:]
+        # print(new_arr)
+        elem = math.prod(new_arr)
+        # print(elem)
+        final_arr[i] = elem
+    return final_arr
+
 
 
 if __name__ == '__main__':
     # Use the main function to test your implementation
     # arr = [1, 2, 3, 4, 5]
-    arr = [2, 6, 9, 8, 2, 2, 9, 10, 7, 4, 7, 1, 9, 5, 9, 1, 8, 1, 8, 6, 2, 6, 4, 8, 9, 5, 4, 9, 10, 3, 9, 1, 9, 2, 6, 8, 5, 5, 4, 7, 7, 5, 8, 1, 6, 5, 1, 7, 7, 8]
+    arr = [1, 7, 3, 4]
 
     print(f"Output of product_of_all_other_numbers: {product_of_all_other_numbers(arr)}")
